@@ -136,15 +136,12 @@ int main() {
                     }
                 }
                 break;
-
             case 5: 
                 cout << "Terima kasih! Program selesai." << endl;
                 break;
-
             default:
                 cout << "Pilihan tidak valid!" << endl;
         }
     } while (pilihan != 5);
-
     return 0;
 }
