@@ -16,8 +16,7 @@ struct Buah {
 Buah daftarBuah[MAX];
 int totalData = 0;
 
-// PROSEDUR MENU
-void tampilMenu() {
+void Menu() {
     cout << "\n=== MENU UTAMA TOKO BUAH ===" << endl;
     cout << "1. Tambah Data Buah" << endl;
     cout << "2. Lihat Daftar Buah" << endl;
@@ -26,8 +25,7 @@ void tampilMenu() {
     cout << "5. Keluar" << endl;
 }
 
-// FUNGSI TAMBAH DATA
-void tambahData(Buah daftarBuah[], int &totalData) {
+void tambah_buah(Buah daftarBuah[], int &totalData) {
     if (totalData < MAX) {
         cout << "Masukkan Nama Buah : ";
         cin.ignore();
@@ -44,8 +42,7 @@ void tambahData(Buah daftarBuah[], int &totalData) {
     }
 }
 
-// FUNGSI LIHAT DATA
-void lihatData(Buah daftarBuah[], int totalData) {
+void daftar_buah(Buah daftarBuah[], int totalData) {
     if (totalData == 0) {
         cout << "Data masih kosong!" << endl;
     }
@@ -59,8 +56,7 @@ void lihatData(Buah daftarBuah[], int totalData) {
     }
 }
 
-// FUNGSI UBAH DATA
-void ubahData(Buah daftarBuah[], int totalData) {
+void edit_buah(Buah daftarBuah[], int totalData) {
     int index;
 
     if (totalData == 0) {
@@ -93,8 +89,7 @@ void ubahData(Buah daftarBuah[], int totalData) {
     }
 }
 
-// FUNGSI HAPUS DATA
-void hapusData(Buah daftarBuah[], int &totalData) {
+void hapus_buah(Buah daftarBuah[], int &totalData) {
     int index;
 
     if (totalData == 0) {
@@ -157,31 +152,26 @@ int main() {
     int pilihan;
 
     do {
-        tampilMenu();
+        Menu();
         cout << "Pilih menu (1-5): ";
         cin >> pilihan;
 
         switch (pilihan) {
             case 1:
-                tambahData(daftarBuah, totalData);
+                tambah_buah(daftarBuah, totalData);
                 break;
-
             case 2:
-                lihatData(daftarBuah, totalData);
+                daftar_buah(daftarBuah, totalData);
                 break;
-
             case 3:
-                ubahData(daftarBuah, totalData);
+                edit_buah(daftarBuah, totalData);
                 break;
-
             case 4:
-                hapusData(daftarBuah, totalData);
+                hapus_buah(daftarBuah, totalData);
                 break;
-
             case 5:
                 cout << "Terima kasih! Program selesai." << endl;
                 break;
-
             default:
                 cout << "Pilihan tidak valid!" << endl;
         }
